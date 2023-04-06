@@ -27,6 +27,46 @@ const Navbar = () => {
       left="0"
       zindex="1"   
     >
+      <Box
+        width="80&"
+        margin="auto"
+        display="flex"
+        justifyContent="space-between"
+        alignItems="center"
+      >
+          <Box
+            onCLick={() => navigate("/")}
+            sx={{ '&:hover': { cursor: "pointer"}}}
+            color={shades.secondary[500]}
+          >
+            Tony's Musical Instrument Shop
+          </Box>
+          <Box
+            display="flex"
+            justifyContent="space-between"
+            columnGap="20px"
+            zIndex="2"
+          >
+            <IconButton sx={{color: "black"}}>
+              <SearchOutlined />
+            </IconButton>
+
+            <IconButton sx={{color: "black"}}>
+              <PersonOutlined />
+            </IconButton>
+
+            <IconButton sx={{color: "black"}}>
+              <ShoppingBagOutlined />
+            </IconButton>
+
+            <IconButton sx={{color: "black"}}>
+              <MenuOutlined />
+            </IconButton>
+
+
+          </Box>
+
+      </Box>
 
     </Box>
   )
