@@ -49,7 +49,7 @@ export const theme = createTheme({
             main: shades.secondary[500]
         },
         neutral: {
-            dark: shades.neutral[700]
+            dark: shades.neutral[700],
             main: shades.neutral[500],
             light: shades.neutral[100]
         }

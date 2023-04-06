@@ -3,10 +3,9 @@ import React from 'react'
 const Confirmation = () => {
   return (
     <div>
-      COnsfirmation
+      Confirmation
     </div>
   )
 }
 
-export default Confirmation
-COnsfirmation
+export default Confirmation;
