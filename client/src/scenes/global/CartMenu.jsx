@@ -1,4 +1,4 @@
-import { Box, Button, Divider, IconButton, Typography} from '@mui/material';
+import { Box, Button, Divider, Icon, IconButton, Typography} from '@mui/material';
 import { useSelector, useDispatch } from 'react-redux';
 import CloseIcon from '@mui/icons-material/Close';
 import AddIcon from '@mui/icons-material/Add';
@@ -74,7 +74,49 @@ const CartMenu = () => {
                                         />
 
                                     </Box>
+                                    <Box flex="1 1 60%">
+
+                                        {/* {item name} */}
+                                        <FlexBox mb="5px">
+                                            <Typography fontWeight="bold">
+                                                {item.attributes.name}
+                                            </Typography>
+                                            <IconButton onCLick={() => dispatch(removeFromCart({ id: item.id}))}>
+                                                <CloseIcon />
+                                            </IconButton>
+                                        </FlexBox>
+                                        <Typography>{item.attributes.shortDescription}</Typography>
+
+                                        {/* { amount } */}
+                                        <FlexBox m="15px 0">
+                                            <Box
+                                                display="flex"
+                                                alignItems="center"
+                                                border={`1.5px solid ${shades.neutral[500]}`}
+                                            >
+                                                <IconButton
+                                                    onCLick={() => dispatch(decreaseCount({id: item.id}))}
+                                                >
+                                                    <RemoveIcon />
+                                                </IconButton>
+                                                <Typography>{item.count}</Typography>
+
+                                                <IconButton
+                                                    onCLick={() => dispatch(increaseCount({id: item.id}))}
+                                                >
+                                                    <AddIcon />
+                                                </IconButton>
+                                            </Box>
+
+                                        </FlexBox>
+
+                                        {/* { price } */}
+                                        <Typography fontWeight="bold">
+                                            ${item.attributes.price}
+                                        </Typography>
+                                    </Box>
                                 </FlexBox>
+                                <Divider />
                             </Box>
                         ))}
                     </Box>
